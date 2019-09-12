@@ -23,7 +23,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by wcxdhr on 2019/8/21.
@@ -36,6 +35,11 @@ public class ThreeSum {
 
     }
 
+    /**
+     * 更优解法：固定最左端指针，右边两个指针逐渐靠近。
+     * @param nums
+     * @return
+     */
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         if (nums.length < 3)
