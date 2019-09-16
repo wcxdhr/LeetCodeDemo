@@ -25,5 +25,25 @@ package com.example.leetcodedemo.Array.medium;
  */
 public class MinimumPathSum {
 
+    /**
+     * 可简化为动态规划
+     * @param grid
+     * @return
+     */
+    public int minPathSum(int[][] grid) {
+        if (grid.length == 0)
+            return 0;
+        int[][] dis = new int[grid.length][grid[0].length];
+        return miniDis(dis, grid, 0, 0);
+    }
 
+    private int miniDis(int[][] dis, int[][] grid, int row, int col) {
+        if (row >= grid.length || col >= grid[0].length)
+            return Integer.MAX_VALUE;
+        else if (row == grid.length - 1 && col == grid[0].length - 1)
+            return grid[row][col];
+        else if (dis[row][col] == 0)
+            dis[row][col] = Math.min(miniDis(dis, grid, row + 1, col), miniDis(dis, grid, row, col + 1)) + grid[row][col];
+        return dis[row][col];
+    }
 }

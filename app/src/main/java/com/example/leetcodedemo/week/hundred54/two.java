@@ -15,6 +15,11 @@ public class two {
         System.out.println(reverseParentheses(s));
     }
 
+    /**
+     * 括号匹配：栈、队列
+     * @param s
+     * @return
+     */
     public static String reverseParentheses(String s) {
         char[] charArr = s.toCharArray();
         Stack<Character> stack = new Stack<>();

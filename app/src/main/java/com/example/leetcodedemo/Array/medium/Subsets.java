@@ -40,8 +40,15 @@ import java.util.List;
 public class Subsets {
 
     List<List<Integer>> ans = new ArrayList<>();
+    HashSet<List<Integer>> set = new HashSet<>();
 
 
+    /**
+     * 更优解法：二进制+位运算 / 二叉树遍历-DFS-回溯
+     * 参考：https://leetcode-cn.com/problems/subsets/solution/hui-su-python-dai-ma-by-liweiwei1419/
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> subsets(int[] nums) {
         ans.add(new ArrayList<Integer>());
         List<Integer> sub = new ArrayList<>();
@@ -49,21 +56,21 @@ public class Subsets {
             sub.add(nums[i]);
         }
         findAllsubsets(sub);
-        HashSet<List<Integer>> set = new HashSet<>();
-        set.addAll(ans);
-        ans.clear();
         ans.addAll(set);
         return ans;
     }
 
     private void findAllsubsets(List<Integer> nums) {
         if (nums.size() > 0) {
-            ans.add(nums);
+            set.add(nums);
             for (int i = 0; i < nums.size(); i++) {
                 List<Integer> sub = new ArrayList<>();
-                for (int j = 0; j < nums.size() && j != i; j++) {
-                    sub.add(nums.get(j));
-                    ans.add(sub);
+                for (int j = 0; j < nums.size(); j++) {
+                    if (j != i)
+                        sub.add(nums.get(j));
+                }
+                if (!set.contains(sub)) {
+                    set.add(sub);
                     findAllsubsets(sub);
                 }
             }
