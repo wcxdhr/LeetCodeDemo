@@ -1,4 +1,4 @@
-package com.example.leetcodedemo.week.hundred54;
+package com.example.leetcodedemo.week.week154;
 
 import java.util.LinkedList;
 import java.util.Queue;
