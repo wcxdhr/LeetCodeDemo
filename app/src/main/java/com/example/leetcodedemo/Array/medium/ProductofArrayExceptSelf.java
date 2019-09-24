@@ -20,14 +20,23 @@ package com.example.leetcodedemo.Array.medium;
  * Created by Wcxdhr on 2019/9/23.
  */
 public class ProductofArrayExceptSelf {
+    /**
+     * 双指针：左积 * 右积 = 其余各元素的乘积
+     * @param nums
+     * @return
+     */
     public int[] productExceptSelf(int[] nums) {
         int[] output = new int[nums.length];
-        int sum = 0;
-        for (int i = 0; i < nums.length; i++)
-            sum *= nums[i];
+        int sum = 1;
         for (int i = 0; i < nums.length; i++) {
-
+            output[i] = sum;
+            sum *= nums[i];
         }
-
+        sum = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            output[i] *= sum;
+            sum *= nums[i];
+        }
+        return output;
     }
 }
