@@ -33,5 +33,34 @@ package com.example.leetcodedemo.Array.medium;
  * Created by Wcxdhr on 2019/9/25.
  */
 public class GrumpyBookstoreOwner {
+    /**
+     * 滑动窗口
+     * @param customers
+     * @param grumpy
+     * @param X
+     * @return
+     */
+    public int maxSatisfied(int[] customers, int[] grumpy, int X) {
+        int maxLost;
+        int curLost = 0;
+        int sum = 0;
+        for (int i = 0; i < X && i < customers.length; i++) {
+            if (grumpy[i] == 1)
+                curLost += customers[i];
+            else
+                sum += customers[i];
+        }
+        maxLost = curLost;
+        for (int i = X; i < customers.length; i++) {
+            if (grumpy[i - X] == 1)
+                curLost -= customers[i - X];
+            if (grumpy[i] == 1)
+                curLost += customers[i];
+            else if (grumpy[i] == 0)
+                sum += customers[i];
+            maxLost = Math.max(curLost, maxLost);
+        }
+        return sum + maxLost;
+    }
 
 }
