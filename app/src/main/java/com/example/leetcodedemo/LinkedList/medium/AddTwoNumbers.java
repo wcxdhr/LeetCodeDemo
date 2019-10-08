@@ -33,15 +33,28 @@ public class AddTwoNumbers {
 
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        int len1 = 1;
-        int len2 = 1;
-        ListNode node = l1;
-        while (node.next != null)
-            len1++;
-        node = l2;
-        while (node.next != null)
-            len2++;
-        int len = Math.max(len1, len2);
-        return node;
+        ListNode ansNode = new ListNode(0);
+        ListNode p = ansNode;
+        ListNode p1 = l1;
+        ListNode p2 = l2;
+        int plus = 0;
+        while (p1 != null || p2 != null) {
+            ListNode n = new ListNode(0);
+            p.next = n;
+            p = n;
+            n.val = (p1 == null ? 0 : p1.val) + (p2 == null ? 0 : p2.val) + plus;
+            if (n.val > 9) {
+                n.val = n.val % 10;
+                plus = 1;
+            }
+            else plus = 0;
+            if (p1 != null) p1 = p1.next;
+            if (p2 != null) p2 = p2.next;
+        }
+        if (plus == 1) {
+            ListNode n = new ListNode(1);
+            p.next = n;
+        }
+        return ansNode.next;
     }
 }
