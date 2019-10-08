@@ -29,7 +29,32 @@ public class PalindromeLinkedList {
         ListNode(int x) { val = x; }
     }
 
+    /**
+     * 更优解法：快慢指针，一半链表倒置
+     * @param head
+     * @return
+     */
     public boolean isPalindrome(ListNode head) {
-
+        int len = 0;
+        ListNode node = head;
+        while (node != null) {
+            node = node.next;
+            len++;
+        }
+        int[] arr = new int[len / 2];
+        node = head;
+        int i = 0;
+        while (i < arr.length) {
+            arr[i++] = node.val;
+            node = node.next;
+        }
+        if ((len & 1) == 1)
+            node = node.next;
+        while (node != null) {
+            if (arr[--i] != node.val)
+                return false;
+            node = node.next;
+        }
+        return true;
     }
 }
