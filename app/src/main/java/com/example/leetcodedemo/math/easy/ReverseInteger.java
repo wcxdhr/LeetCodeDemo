@@ -29,14 +29,37 @@ package com.example.leetcodedemo.math.easy;
  */
 public class ReverseInteger {
     public int reverse(int x) {
+
         StringBuilder builder = new StringBuilder();
         Boolean nFlag = false;
         if (x < 0) {
             nFlag = true;
-            x = - x;
+            x = -x;
         }
         builder.append(x).reverse();
-        if (builder.length() >= 10 );
-        return Integer.parseInt(builder.reverse().toString());
+        if (builder.length() >= 10) {
+            if (nFlag && builder.toString().compareTo("2147483648") > 0
+                    || !nFlag && builder.toString().compareTo("2147483647") > 0)
+                return 0;
+        }
+        return nFlag ? -Integer.parseInt(builder.toString()) : Integer.parseInt(builder.toString());
     }
+
+    /**
+     * 官方解答，注意溢出的判定
+     */
+    public int reverse2(int x) {
+        int rev = 0;
+        while (x != 0) {
+            int pop = x % 10;
+            x /= 10;
+            if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > 7))
+                return 0;
+            if (rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && pop < -8))
+                return 0;
+            rev = rev * 10 + pop;
+        }
+        return rev;
+    }
+
 }

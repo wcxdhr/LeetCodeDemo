@@ -44,9 +44,28 @@ public class KthSmallestElementinaBST {
         TreeNode(int x) { val = x; }
     }
 
-    public int kthSmallest(TreeNode root, int k) {
-        //todo
-        return 0;
+    /**
+     * 中序遍历，合理思考
+     */
+    int kk;
+    int ans;
 
+    public int kthSmallest(TreeNode root, int k) {
+        kk = 0;
+        if (root != null)
+            kthHelper(root, k);
+        return ans;
+    }
+
+    private void kthHelper(TreeNode node, int k) {
+        if (node.left != null)
+            kthHelper(node.left, k);
+        kk++;
+        if (kk == k){
+            ans = node.val;
+            return;
+        }
+        if (node.right != null && kk < k)
+            kthHelper(node.right, k);
     }
 }
