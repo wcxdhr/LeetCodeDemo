@@ -47,6 +47,7 @@ public class ReverseInteger {
 
     /**
      * 官方解答，注意溢出的判定
+     *
      */
     public int reverse2(int x) {
         int rev = 0;
