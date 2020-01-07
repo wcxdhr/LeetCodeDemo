@@ -27,7 +27,34 @@ package com.example.leetcodedemo.math.medium;
  * Created by Wcxdhr on 2019/12/31.
  */
 public class DivideTwoIntegers {
+    /**
+     * 暴力解法性能太低，再看看题解
+     * 注意：<>的边界
+     * @param dividend
+     * @param divisor
+     * @return
+     */
     public int divide(int dividend, int divisor) {
-        return 0;
+        if (dividend == -2147483648 && divisor == -1)
+            return 2147483647;
+        if (divisor == 1)
+            return dividend;
+        if (divisor == -1)
+            return -dividend;
+        boolean nFlag = false;
+        if (dividend > 0){
+            nFlag = !nFlag;
+            dividend = -dividend;
+        }
+        if (divisor > 0){
+            nFlag = !nFlag;
+            divisor = -divisor;
+        }
+        int ans = 0;
+        while (dividend <= divisor) {
+            dividend -= divisor;
+            ans++;
+        }
+        return nFlag ? -ans : ans;
     }
 }
