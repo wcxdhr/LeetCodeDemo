@@ -8,7 +8,7 @@ package com.example.leetcodedemo.math.medium;
  * 输出: "6"
  * 示例 2:
  *
- * 输入: num1 = "123", num2 = "456"
+ * 输入: num1 = "123", num2  = "456"
  * 输出: "56088"
  * 说明：
  *
@@ -23,6 +23,9 @@ package com.example.leetcodedemo.math.medium;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+import java.util.Arrays;
+import java.util.IllegalFormatCodePointException;
+
 /**
  * Created by Wcxdhr on 2020/1/7.
  */
@@ -30,17 +33,32 @@ public class MultiplyStrings {
     public String multiply(String num1, String num2) {
         if (num1.equals("0") || num2.equals("0"))
             return "0";
-        char[][] tmp = new char[num2.length()][num1.length()];
+        char[][] tmp = new char[num2.length()][num1.length() + num2.length()];
+        for (int i = 0; i < num2.length(); i++)
+            Arrays.fill(tmp[i], '0');
         for (int i = num2.length() - 1; i >= 0; i--) {
             int mul = num2.charAt(i) - '0';
             int flag = 0;
-            for (int j = num1.length() - 1; j >= 0; j--) {
-                int intJ = num2.charAt(j) - '0';
-                tmp[i][j] = (char) ((mul +intJ +flag) / 10 + '0');
-                flag = (mul +intJ +flag) % 10;
+            for (int j = num1.length() + i; j >= i + 1; j--) {
+                int intJ = num1.charAt(j - i - 1) - '0';
+                tmp[i][j] = (char) ((mul * intJ + flag) % 10 + '0');
+                flag = (mul * intJ + flag) / 10;
             }
+            if (flag != 0)
+                tmp[i][i] = (char)(flag + '0');
         }
         StringBuilder builder = new StringBuilder();
-        return "0";
+        int flag = 0;
+        for (int j = num1.length() + num2.length() - 1; j >= 1; j--) {
+            int singleSum = flag;
+            for (int i = num2.length() - 1; i >= 0; i--) {
+                singleSum += (tmp[i][j] - '0');
+            }
+            flag = singleSum / 10;
+            builder.append((char)(singleSum % 10 + '0'));
+        }
+        if ((tmp[0][0] + flag) != '0')
+            builder.append((char)(tmp[0][0] + flag));
+        return builder.reverse().toString();
     }
 }
