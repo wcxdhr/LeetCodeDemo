@@ -10,7 +10,7 @@ import java.util.Stack;
  * Created by wcxdhr on 2020/2/5.
  */
 
-public class LinkListPrint {
+public class LinkedListPrint {
 
     public static void main(String[] args) {
         ListNode head = new ListNode(0);
@@ -20,7 +20,7 @@ public class LinkListPrint {
             p.next = next;
             p = p.next;
         }
-        System.out.println(new LinkListPrint().printListFromTailToHead(head));
+        System.out.println(new LinkedListPrint().printListFromTailToHead(head));
     }
 
     public static class ListNode {
