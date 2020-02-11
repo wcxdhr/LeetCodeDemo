@@ -8,6 +8,27 @@ public class Solution {
 
 
     public static void main(String[] args) {
+
+        MinStack stack = new MinStack();
+        stack.push(3);
+        stack.min();
+        stack.push(4);
+        stack.min();
+        stack.push(2);
+        stack.min();
+        stack.push(3);
+        stack.min();
+        stack.pop();
+        stack.min();
+        stack.pop();
+        stack.min();
+        stack.pop();
+        stack.min();
+        stack.push(0);
+        stack.min();
+
+
+
         RandomListNode head = new RandomListNode(1);
         RandomListNode p = head;
         for (int i = 2; i < 6; i++) {
