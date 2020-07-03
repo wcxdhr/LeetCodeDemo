@@ -28,6 +28,10 @@ public class ReorderList {
         ListNode(int x) { val = x; }
     }
 
+    /**
+     * 递归
+     * @param head
+     */
     public void reorderList(ListNode head) {
         if (head == null || head.next == null || head.next.next == null)
             return;

@@ -25,16 +25,16 @@ package com.example.leetcodedemo.string.medium;
  * 解释：在规范路径中，多个连续斜杠需要用一个斜杠替换。
  * 示例 4：
  *
- * 输入："/a/./b/../../c/"
+ * 输入："/Allocation/./b/../../c/"
  * 输出："/c"
  * 示例 5：
  *
- * 输入："/a/../../b/../c//.//"
+ * 输入："/Allocation/../../b/../c//.//"
  * 输出："/c"
  * 示例 6：
  *
- * 输入："/a//b////c/d//././/.."
- * 输出："/a/b/c"
+ * 输入："/Allocation//b////c/d//././/.."
+ * 输出："/Allocation/b/c"
  *
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/simplify-path

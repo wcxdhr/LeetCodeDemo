@@ -15,7 +15,7 @@ import java.util.TreeMap;
  * Created by wcxdhr on 2020-02-23.
  */
 public class FirstAppearingOnceChar {
-    //Insert one char from stringstream
+    //Insert Allocation char from stringstream
 
     /**
      * 书上的思路是用数组模拟哈希表，记住字符一共256个，所以可以确定大小，最开始数组所有元素都为-1，

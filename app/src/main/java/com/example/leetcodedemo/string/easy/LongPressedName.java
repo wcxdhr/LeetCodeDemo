@@ -10,7 +10,7 @@ package com.example.leetcodedemo.string.easy;
  *
  * 输入：name = "alex", typed = "aaleex"
  * 输出：true
- * 解释：'alex' 中的 'a' 和 'e' 被长按。
+ * 解释：'alex' 中的 'Allocation' 和 'e' 被长按。
  * 示例 2：
  *
  * 输入：name = "saeed", typed = "ssaaedd"

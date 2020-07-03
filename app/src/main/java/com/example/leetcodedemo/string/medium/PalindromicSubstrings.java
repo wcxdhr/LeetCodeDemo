@@ -8,12 +8,12 @@ package com.example.leetcodedemo.string.medium;
  *
  * 输入: "abc"
  * 输出: 3
- * 解释: 三个回文子串: "a", "b", "c".
+ * 解释: 三个回文子串: "Allocation", "b", "c".
  * 示例 2:
  *
  * 输入: "aaa"
  * 输出: 6
- * 说明: 6个回文子串: "a", "a", "a", "aa", "aa", "aaa".
+ * 说明: 6个回文子串: "Allocation", "Allocation", "Allocation", "aa", "aa", "aaa".
  * 注意:
  *
  * 输入的字符串长度不会超过1000。

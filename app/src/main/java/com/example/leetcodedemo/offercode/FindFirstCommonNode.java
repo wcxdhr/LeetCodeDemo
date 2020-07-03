@@ -19,7 +19,7 @@ public class FindFirstCommonNode {
     }
 
     /**
-     * leetcpde原题，就是先遍历出长度，再第二次遍历，找相同节点。
+     * leetcode原题，就是先遍历出长度，再第二次遍历，找相同节点。
      * @param pHead1
      * @param pHead2
      * @return

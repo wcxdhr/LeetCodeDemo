@@ -37,6 +37,7 @@ public class RotateList {
 
     /**
      * 尾部可以用tail命名
+     * 很简单，首先求长度，对k做处理，然后只用把链表一些指针的指向改一下就行
      * @param head
      * @param k
      * @return

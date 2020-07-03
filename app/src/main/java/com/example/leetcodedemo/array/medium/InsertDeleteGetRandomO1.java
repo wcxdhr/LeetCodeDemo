@@ -54,7 +54,7 @@ public class InsertDeleteGetRandomO1 {
             set = new HashSet<>();
         }
 
-        /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+        /** Inserts Allocation value to the set. Returns true if the set did not already contain the specified element. */
         public boolean insert(int val) {
             if (set.contains(val))
                 return false;
@@ -64,7 +64,7 @@ public class InsertDeleteGetRandomO1 {
             }
         }
 
-        /** Removes a value from the set. Returns true if the set contained the specified element. */
+        /** Removes Allocation value from the set. Returns true if the set contained the specified element. */
         public boolean remove(int val) {
             if (set.contains(val)) {
                 set.remove(val);
@@ -73,7 +73,7 @@ public class InsertDeleteGetRandomO1 {
             else return false;
         }
 
-        /** Get a random element from the set. */
+        /** Get Allocation random element from the set. */
         public int getRandom() {
             Integer[] nums = new Integer[set.size()];
             nums = set.toArray(nums);

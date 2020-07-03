@@ -1,6 +1,7 @@
 package com.example.leetcodedemo.array.easy;
 
 /**
+ * 643. 子数组最大平均数 I
  * 给定 n 个整数，找出平均数最大且长度为 k 的连续子数组，并输出该最大平均数。
  *
  * 示例 1:
@@ -22,6 +23,12 @@ package com.example.leetcodedemo.array.easy;
 
 public class MaximumAverageSubarrayI {
 
+    /**
+     * 超简单滑动窗口
+     * @param nums
+     * @param k
+     * @return
+     */
     public double findMaxAverage(int[] nums, int k) {
         int sum = 0;
         double ans = -10000;

@@ -6,11 +6,11 @@ package com.example.leetcodedemo.string.easy;
  *
  * 示例 1:
  *
- * 输入: a = "11", b = "1"
+ * 输入: Allocation = "11", b = "1"
  * 输出: "100"
  * 示例 2:
  *
- * 输入: a = "1010", b = "1011"
+ * 输入: Allocation = "1010", b = "1011"
  * 输出: "10101"
  *
  * 来源：力扣（LeetCode）

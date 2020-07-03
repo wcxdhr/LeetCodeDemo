@@ -64,7 +64,7 @@ public class DesignLinkedList {
             return linkList.get(index).val;
         }
 
-        /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
+        /** Add Allocation node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
         public void addAtHead(int val) {
             ListNode node = new ListNode(val);
             if (linkList.size() > 0)
@@ -72,7 +72,7 @@ public class DesignLinkedList {
             linkList.add(0, node);
         }
 
-        /** Append a node of value val to the last element of the linked list. */
+        /** Append Allocation node of value val to the last element of the linked list. */
         public void addAtTail(int val) {
             ListNode node = new ListNode(val);
             if (linkList.size() > 0)
@@ -80,7 +80,7 @@ public class DesignLinkedList {
             linkList.add(node);
         }
 
-        /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
+        /** Add Allocation node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
         public void addAtIndex(int index, int val) {
             if (index <= linkList.size()) {
                 if (index <= 0)

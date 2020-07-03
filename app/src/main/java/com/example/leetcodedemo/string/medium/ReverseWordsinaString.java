@@ -15,8 +15,8 @@ package com.example.leetcodedemo.string.medium;
  * 解释: 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
  * 示例 3：
  *
- * 输入: "a good   example"
- * 输出: "example good a"
+ * 输入: "Allocation good   example"
+ * 输出: "example good Allocation"
  * 解释: 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
  *  
  *

@@ -25,7 +25,13 @@ public class PartitionList {
         ListNode(int x) { val = x; }
     }
 
-
+    /**
+     * 哑节点
+     * 思路：先找到第一个>=的节点之前的最后一个节点，然后对后面的节点遍历，如果小于，就接在pre的尾部
+     * @param head
+     * @param x
+     * @return
+     */
     public ListNode partition(ListNode head, int x) {
         ListNode dumb = new ListNode(-1);
         dumb.next = head;

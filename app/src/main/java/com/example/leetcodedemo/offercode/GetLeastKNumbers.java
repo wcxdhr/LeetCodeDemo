@@ -3,7 +3,10 @@ package com.example.leetcodedemo.offercode;
  * 输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。
  */
 
+import android.app.Person;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by wcxdhr on 2020-02-12.
@@ -15,6 +18,16 @@ public class GetLeastKNumbers {
         System.out.println(new GetLeastKNumbers().GetLeastNumbers_Solution(new int[]{
                 4,5,1,6,2,7,3,8
         }, 10));
+
+
+    }
+
+    public static class Persons{
+        int val = 0;
+    }
+
+    public static class Man extends Persons{
+
     }
 
     /**

@@ -51,6 +51,7 @@ public class LinkedListCycleII {
 
     /**
      * 数学等式证明
+     * 当slow和fast相遇时，再让一个指针指向链表头，与slow一起向前移动，相遇的地点即为入口。
      * @param head
      * @return
      */

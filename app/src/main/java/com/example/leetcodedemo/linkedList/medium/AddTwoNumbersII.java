@@ -63,6 +63,12 @@ public class AddTwoNumbersII {
         return l1;
     }
 
+    /**
+     * 递归相加
+     * @param l1
+     * @param l2
+     * @return
+     */
     private int addNumberHelper(ListNode l1, ListNode l2) {
         if (l1 != null){
             l1.val = l1.val + l2.val + addNumberHelper(l1.next, l2.next);

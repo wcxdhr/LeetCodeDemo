@@ -8,7 +8,7 @@ package com.example.leetcodedemo.string.easy;
  *
  * 你可以假设两个字符串均只含有小写字母。
  *
- * canConstruct("a", "b") -> false
+ * canConstruct("Allocation", "b") -> false
  * canConstruct("aa", "ab") -> false
  * canConstruct("aa", "aab") -> true
  *

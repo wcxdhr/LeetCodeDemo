@@ -36,6 +36,7 @@ public class ReverseLinkedListII {
             preM = preM.next;
         }
         ListNode preNode =  nodeM = preM.next;
+        //head来进行遍历，其实可以改成cur
         head = preNode.next;
         while (i < n) {
             i++;

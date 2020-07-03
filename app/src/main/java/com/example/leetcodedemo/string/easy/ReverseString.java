@@ -14,8 +14,8 @@ package com.example.leetcodedemo.string.easy;
  * 输出：["o","l","l","e","h"]
  * 示例 2：
  *
- * 输入：["H","a","n","n","a","h"]
- * 输出：["h","a","n","n","a","H"]
+ * 输入：["H","Allocation","n","n","Allocation","h"]
+ * 输出：["h","Allocation","n","n","Allocation","H"]
  *
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/reverse-string
